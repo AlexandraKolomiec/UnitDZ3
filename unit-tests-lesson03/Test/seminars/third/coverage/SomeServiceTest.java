@@ -136,11 +136,16 @@ class SomeServiceTest {
     //Метод проверяет, является ли целое число записанное в переменную n, чётным (true) либо нечётным (false)
     @Test
     void IsEven(){
-        assertTrue(someService.evenOddNumber(4));
+        assertTrue(someService.evenOddNumber(0));
     }
     @Test
     void IsOdd(){
         assertFalse(someService.evenOddNumber(5));
+    }
+    @Test
+    void IsNegative(){
+        assertFalse(someService.evenOddNumber(-5));
+        System.out.println("Введите значение больше 0");
     }
 
     //метод который проверяет, попадает ли переданное число в интервал (25;100) возвращает true,
@@ -148,11 +153,11 @@ class SomeServiceTest {
 
     @Test
     void NumberIn(){
-        assertTrue(someService.numberInInterval(46));
+        assertTrue(someService.numberInInterval(25));
     }
     @Test
     void NumberOut(){
-        assertFalse(someService.numberInInterval(103));
+        assertFalse(someService.numberInInterval(-10));
     }
 }
 
